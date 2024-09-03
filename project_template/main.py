@@ -14,8 +14,8 @@ import csv
 file_name = "disneyland_reviews.csv"
 #list to store the data
 
-data = []
-#read data from file
+
+
 
 
 # Annotation// taking text as argument
@@ -40,6 +40,15 @@ def reading():
         print("Data set for 'disneyland_reviews.csv' has been uploaded.")
         print(f"There is {nr_rows} in the dataset.")
     return data
+
+
+
+#returning list so it can be used later in the program
+def main():
+    global data
+    data = reading()
+    menu()
+
 # Main menu
 def menu():
     while True:
@@ -58,19 +67,24 @@ def menu():
             break
         else:
             print("No valid option! please enter correct letter.")
+#Submenu A from the main menu
 def sub_menu_a():
     opt2 = input("""Please enter one of the following options\n\n
 [A]-View Reviews by park
 [B]-Number of Reviews by Park and Reviewer Location
 [C]-Average Score per year by Park
 [D]-Average Score per Park by Reviewer Location\n""").upper()
-    if opt2 == "B":
-        sub_menu_b()
+    if opt2 == "A":
+        reviews_by_park()
+    #elif opt2 == "B":
 
 
 
 
-#Submenu B from section A
+
+
+
+#Submenu B from main menu
 def sub_menu_b():
     opt3 = input("""Please enter one of following options: 
 [A]-Most Reviewed Parks
@@ -78,8 +92,9 @@ def sub_menu_b():
 [C]-Park Ranking by Nationality
 [D]-Most Popular Month by Park\n""")
 
-def menu_a1():
-    park = input("Which park do you with to see reviews for?")
+#Submenu A option A
+
+
 
 
 
