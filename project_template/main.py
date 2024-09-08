@@ -7,76 +7,21 @@ Note:   any user input/output should be done in the module 'tui'
         any processing should be done in the module 'process'
         any visualisation should be done in the module 'visual'
 """
+import process
+import tui
 
 
-import csv
-#csv file path
-file_name = "disneyland_reviews.csv"
-#list to store the data
-
-
-
-
-
-# Annotation// taking text as argument
-def annotation(text):
-    # top and bottom lines/ one for every letter
-    line = "-" * len(text)
-    print(line)
-    print(text)
-    print(line)
-
-annotation("DisneyLand Review Analyser")
-#Reading data from the file and / informing user how many rows
-def reading():
-    data=[]
-    with open("data/disneyland_reviews.csv", "r") as f:
-        reader = csv.reader(f)
-        nr_rows = 0
-        for row in reader:
-            data.append(row)
-            nr_rows += 1
-
-        print("Data set for 'disneyland_reviews.csv' has been uploaded.")
-        print(f"There is {nr_rows} in the dataset.")
-    return data
-
-
-
-#returning list so it can be used later in the program
 def main():
-    global data
-    data = reading()
-    menu()
+    # Wczytaj dane z pliku
+    data = process.reading()
 
-# Main menu
-def menu():
-    while True:
-        opt = input("""Please enter The letter which corresponds with your desired menu choise:
-[A]-View Data
-[B]-Visualize Data
-[X]-Exit\n\n""").upper()
-        if  opt == "A":
-            print(f"You have chosen option {opt}")
-            sub_menu_a()
-        elif opt == "B":
-            print(f"You have chosen option {opt}")
+    # Uruchom menu użytkownika
+    tui.menu(data)
 
 
-        elif opt == "X":
-            break
-        else:
-            print("No valid option! please enter correct letter.")
-#Submenu A from the main menu
-def sub_menu_a():
-    opt2 = input("""Please enter one of the following options\n\n
-[A]-View Reviews by park
-[B]-Number of Reviews by Park and Reviewer Location
-[C]-Average Score per year by Park
-[D]-Average Score per Park by Reviewer Location\n""").upper()
-    if opt2 == "A":
-        reviews_by_park()
-    #elif opt2 == "B":
+# Upewnij się, że funkcja main() jest wywoływana, gdy plik jest uruchamiany
+if __name__ == "__main__":
+    main()
 
 
 
@@ -84,15 +29,11 @@ def sub_menu_a():
 
 
 
-#Submenu B from main menu
-def sub_menu_b():
-    opt3 = input("""Please enter one of following options: 
-[A]-Most Reviewed Parks
-[B]-Average Scores
-[C]-Park Ranking by Nationality
-[D]-Most Popular Month by Park\n""")
 
-#Submenu A option A
+
+
+
+
 
 
 
