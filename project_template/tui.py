@@ -7,6 +7,7 @@ Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
 """
 import process
+import visual
 # Annotation// taking text as argument
 def annotation(text):
     # top and bottom lines/ one for every letter
@@ -29,6 +30,7 @@ def menu(data):
             sub_menu_a(data)
         elif opt == "B":
             print(f"You have chosen option {opt}")
+            sub_menu_b(data)
 
 
         elif opt == "X":
@@ -49,14 +51,13 @@ def sub_menu_a(data):
     elif opt2 == "B":   # Funtion for reviews by park and location
         process.number_of_reviews_by_park_and_location(data)
 
-        pass
     elif opt2 == "C":
-        #add coment when ready
+        process.average_score_per_year_by_park(data)
 
-        pass
-    elif opt2 == "D":  #add comment when ready
+    elif opt2 == "D":
+        process.average_score_per_park_by_location(data)
 
-        pass
+
     else:
         print("Wrong input! Please choose the correct option.")
 
@@ -69,8 +70,8 @@ def sub_menu_b(data):
 [D] - Most Popular Month by Park \n""").upper()
 
     if opt3 == "A":
-        # Function to visualize reviews by park
         pass
+
     elif opt3 == "B":
         # Function to visualize Average scores
         pass
