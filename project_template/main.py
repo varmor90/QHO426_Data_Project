@@ -12,14 +12,14 @@ import tui
 
 
 def main():
-    # Wczytaj dane z pliku
+    #read the data from the file
     data = process.reading()
 
-    # Uruchom menu użytkownika
+    # run the menu
     tui.menu(data)
 
 
-# Upewnij się, że funkcja main() jest wywoływana, gdy plik jest uruchamiany
+# make sure
 if __name__ == "__main__":
     main()
 

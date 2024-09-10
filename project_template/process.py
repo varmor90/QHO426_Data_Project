@@ -11,10 +11,12 @@ def reading(file_path="data/disneyland_reviews.csv"):
     with open(file_path, mode="r") as f:
         reader = csv.reader(f)
         headers = next(reader)
-#changing data from list to dictionary
+#changing data from list to dictionary to use it later in the program
         for row in reader:
             if len(row) == len(headers):
-                row_dict = {headers[i]: row[i] for i in range(len(headers))}
+                row_dict = {}
+                for i in range(len(headers)):
+                    row_dict[headers[i]] = row[i]
                 data.append(row_dict)
 
     print("Data set for 'disneyland_reviews.csv' has been uploaded.")

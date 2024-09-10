@@ -60,6 +60,7 @@ def sub_menu_a(data):
 
     else:
         print("Wrong input! Please choose the correct option.")
+        sub_menu_a(data)
 
 #SUBMENU B
 def sub_menu_b(data):
@@ -70,10 +71,10 @@ def sub_menu_b(data):
 [D] - Most Popular Month by Park \n""").upper()
 
     if opt3 == "A":
-        pass
+        visual.most_reviewed_parks(data)
 
     elif opt3 == "B":
-        # Function to visualize Average scores
+        visual.average_scores(data)
         pass
     elif opt3 == "C":
         # Function to visualize park ranking by nationality
@@ -83,5 +84,6 @@ def sub_menu_b(data):
         pass
     else:
         print("Wrong input! Please choose the correct option.")
+        sub_menu_b(data)
 
 
