@@ -11,7 +11,7 @@ def reading(file_path="data/disneyland_reviews.csv"):
     with open(file_path, mode="r") as f:
         reader = csv.reader(f)
         headers = next(reader)
-#changing data from list to dictionary to use it later in the program
+
         for row in reader:
             if len(row) == len(headers):
                 row_dict = {}
@@ -35,7 +35,7 @@ def view_reviews_by_park(data):
         Disneyland_California\n
         Disneyland_Paris\n
         """)
-# check if input is correct
+
         if park_name in valid_parks:
             for review in data:
                 if review['Branch'] == park_name:
@@ -44,7 +44,7 @@ def view_reviews_by_park(data):
         else:
             print("Please enter a correct park name.\n")
 
-    # results
+
     if park_reviews:
         print(f"\nReviews for {park_name}:")
         for review in park_reviews:
@@ -58,17 +58,17 @@ def number_of_reviews_by_park_and_location(data):
 
     park_location_counts = {}
 
-# read the park name and location and create the key
+
     for review in data:
         park = review['Branch']
         location = review['Reviewer_Location']
 
 
         key = f"{park} - {location}"
-#check if the key is in dictionary
+
         if key not in park_location_counts:
             park_location_counts[key] = 0  #
-# adding reviews
+
         park_location_counts[key] += 1  #
 
 #printing results
@@ -82,21 +82,21 @@ def average_score_per_year_by_park(data):
 
 
     """
-    #dictionaries to keep reviews for year and park
+
     park_year_scores = {}
     park_year_counts = {}
 
 
-    #Loop through all reviews in data
+
     for review in data:
         park = review['Branch']
         year = review['Year_Month'][:4]
         rating = float(review['Rating'])
 
-    # creating key
+
         key = (park, year)
 
-# add the key if doesnt exist
+
         if key not in park_year_scores:
             park_year_scores[key] = 0.0
             park_year_counts[key] = 0
@@ -104,7 +104,7 @@ def average_score_per_year_by_park(data):
             park_year_scores[key] += rating
             park_year_counts[key] += 1
 
-#counting average scores / printing results
+
 
     for key in park_year_scores:
         park, year = key
@@ -120,11 +120,11 @@ def average_score_per_park_by_location(data):
     prints Park- location : average score format
 
     """
-    #dictionaries to keep score and nr of reviews for parks and locations
+
     park_location_scores = {}
     park_location_counts = {}
 
-    #Loop through all reviews in data
+
     for review in data:
         park = review['Branch']
         location = review['Reviewer_Location']
@@ -132,7 +132,7 @@ def average_score_per_park_by_location(data):
 
         key = (park, location)
 
-        #add the key if doest exist in dictionaries
+
         if key not in park_location_scores:
             park_location_scores[key] = 0.0
             park_location_counts[key] = 0
@@ -141,11 +141,14 @@ def average_score_per_park_by_location(data):
         park_location_scores[key] += rating
         park_location_counts[key] += 1
 
-        #counting average scores and printing results
+
     for key in park_location_scores:
         park,location =key
         total_score = park_location_scores[key]
         count = park_location_counts[key]
         average_score = total_score / count
         print(f"{park} - {location}: {average_score:.2f}")
+
+
+
 

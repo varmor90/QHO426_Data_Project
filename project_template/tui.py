@@ -75,13 +75,12 @@ def sub_menu_b(data):
 
     elif opt3 == "B":
         visual.average_scores(data)
-        pass
+
     elif opt3 == "C":
-        # Function to visualize park ranking by nationality
-        pass
+        visual.top_10_locations_by_rating(data)
+
     elif opt3 == "D":
-        # Function to visualize most popular month by park
-        pass
+        visual.average_rating_by_month(data)
     else:
         print("Wrong input! Please choose the correct option.")
         sub_menu_b(data)
