@@ -81,6 +81,7 @@ def sub_menu_b(data):
 
     elif opt3 == "D":
         visual.average_rating_by_month(data)
+
     else:
         print("Wrong input! Please choose the correct option.")
         sub_menu_b(data)
