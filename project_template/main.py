@@ -11,15 +11,16 @@ import process
 import tui
 
 
+
 def main():
-    #read the data from the file
+
     data = process.reading()
 
-    # run the menu
+
     tui.menu(data)
 
 
-# make sure
+
 if __name__ == "__main__":
     main()
 

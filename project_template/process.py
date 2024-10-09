@@ -76,12 +76,7 @@ def number_of_reviews_by_park_and_location(data):
         print(f"{key}: {count} reviews")
 
 def average_score_per_year_by_park(data):
-    """
-    Funtion counts the average score for each park and prints the results in 'park - year' format
 
-
-
-    """
 
     park_year_scores = {}
     park_year_counts = {}
@@ -115,11 +110,7 @@ def average_score_per_year_by_park(data):
 
 
 def average_score_per_park_by_location(data):
-    """
-    Function counts average score for every park, based on reviewer location and
-    prints Park- location : average score format
 
-    """
 
     park_location_scores = {}
     park_location_counts = {}
@@ -148,6 +139,9 @@ def average_score_per_park_by_location(data):
         count = park_location_counts[key]
         average_score = total_score / count
         print(f"{park} - {location}: {average_score:.2f}")
+
+
+
 
 
 
